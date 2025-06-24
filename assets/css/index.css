@@ -1,0 +1,19 @@
+body{
+    padding: 0;
+    background-image: url("/assets/img/images.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background: #c8ecfa;
+    background: linear-gradient(333deg,rgba(200, 236, 250, 1) 0%, rgba(223, 239, 242, 1) 29%);
+
+}
+
+.navbar{
+    background: #c8ecfa;
+    background: linear-gradient(333deg, rgba(200, 236, 250, 1) 0%, rgba(188, 232, 237, 1) 21%, rgba(87, 199, 133, 1) 68%, rgba(237, 221, 83, 1) 100%);
+}
+
+.navbar img{
+    height: 90px;
+}
