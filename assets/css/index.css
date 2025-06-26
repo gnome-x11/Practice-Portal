@@ -5,14 +5,12 @@
     --color-light-green: #79DE79;
     --color-soft: #FFD700;
     --color-notify: #FB6962;
+    --color-background: linear-gradient(333deg, rgba(200, 236, 250, 1) 0%, rgba(188, 232, 237, 1) 21%, rgba(87, 199, 133, 1) 68%, rgba(237, 221, 83, 1) 100%);
 }
 
 body{
     padding: 0;
-    /* background-image: url("/assets/img/images.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh; */
+    font-family: "Poppins";
     background: #c8ecfa;
     background: linear-gradient(333deg,rgba(200, 236, 250, 1) 0%, rgba(223, 239, 242, 1) 29%);
 }
@@ -23,7 +21,7 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* Wrap content on smaller screens */
+  flex-wrap: wrap;
   padding: 8px 16px;
   background-color: #222;
   background-color: var(--color-base);
@@ -73,6 +71,45 @@ body{
     height: 80px;
 }
 
+.nav-link{
+    justify-content: space-evenly;
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+}
+
+.nav-link:hover{
+    color: var(--color-base);
+}
+
+.nav-link:active a{
+    color: var(--color-base);
+
+}
+
+.dropdown-menu{
+    background-color: white;
+    border: none;
+    border-radius: 0px;
+}
+
+.dropdown-menu a{
+    color: var(--color-base);
+    font-weight: 300;
+}
+
+.dropdown-menu a:hover{
+    background-color: transparent;
+    color: black;
+    font-weight: 500;
+}
+
+.menu_icon{
+    color: black;
+    font-size: 20px;
+    display: none;
+}
+
 @media (max-width: 760px) {
     .navbar{
         margin-top: 50px;
@@ -82,10 +119,41 @@ body{
         height: 50px;
     }
 
+    .nav{
+        position: absolute;
+        top: 70px;
+        right: 0;
+        left: 0;
+        flex-direction: column;
+        text-align: center;
+        background-color: var(--color-blizzard);
+        gap: 0;
+        padding: 20px;
+    }
+
+    .nav-item{
+        padding: 20px;
+    }
+
+    .dropdown-menu{
+        width: 100%;
+        gap: 0;
+        border: none;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .dropdown-menu li {
+        padding: 5px;
+    }
+
+    .menu_icon{
+        display: flex;
+        font-size: 20px;
+    }
 }
 
 .background_subject{
     widht: 100%;
     height: auto;
-
 }
