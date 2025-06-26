@@ -22,39 +22,38 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="*" href="#" role="button" aria-expanded="false">School Profile</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">History</a></li>
-                  <li><a class="dropdown-item" href="#">Faculty</a></li>
-                  <li><a class="dropdown-item" href="#">Academic Officials</a></li>
-                  <li><a class="dropdown-item" href="#">Student's Life and Development</a></li>
-                  <li><a class="dropdown-item" href="#">Tunasan Vision and Mission</a></li>
-                  <li><a class="dropdown-item" href="#">Students Organization</a></li>
-                  <li><a class="dropdown-item" href="#">Student Clubs</a></li>
-                  <li><a class="dropdown-item" href="#">Organizational Structure</a></li>
+                  <li><a class="dropdown-item" href="pages/history.php">History</a></li>
+                  <li><a class="dropdown-item" href="pages/faculty.php">Faculty</a></li>
+                  <li><a class="dropdown-item" href="pages/academic_officials.php">Academic Officials</a></li>
+                  <li><a class="dropdown-item" href="pages/vision_mission.php">Tunasan Vision and Mission</a></li>
+                  <li><a class="dropdown-item" href="pages/student_organization.php">Students Organization</a></li>
+                  <li><a class="dropdown-item" href="pages/student_club.php">Student Clubs</a></li>
+                  <li><a class="dropdown-item" href="pages/organizational_chart">Organizational Structure</a></li>
                 </ul>
               </li>
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="*" href="#" role="button" aria-expanded="false">Online Services</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Online Addmission (Junior High School)</a></li>
-                  <li><a class="dropdown-item" href="#">Online Addmission (Senior High School)</a></li>
-                  <li><a class="dropdown-item" href="#">Alternative Learning System (ALS)</a></li>
-                  <li><a class="dropdown-item" href="#">Student Portal</a></li>
-                  <li><a class="dropdown-item" href="#">Faculty Portal</a></li>
+                  <li><a class="dropdown-item" href="pages/online_admission_junior.php">Online Addmission (Junior High School)</a></li>
+                  <li><a class="dropdown-item" href="pages/online_admission_senior.php">Online Addmission (Senior High School)</a></li>
+                  <li><a class="dropdown-item" href="pages/online_admission_als.php">Alternative Learning System (ALS)</a></li>
+                  <li><a class="dropdown-item" href="pages/student_portal.php">Student Portal</a></li>
+                  <li><a class="dropdown-item" href="pages/faculty_portal.php">Faculty Portal</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Admission Requirements and Procedures</a></li>
-                  <li><a class="dropdown-item" href="#">Senior High School Offered Strand</a></li>
+                  <li><a class="dropdown-item" href="pages/admission_procedures.php">Admission Requirements and Procedures</a></li>
+                  <li><a class="dropdown-item" href="pages/strand_offered.php">Senior High School Offered Strand</a></li>
                 </ul>
               </li>
 
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">Carrers</a>
+            <a class="nav-link" aria-current="page" href="pages/carrers.php">Carrers</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Academics</a>
+            <a class="nav-link" href="pages/academics.php">Academics</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-disabled="true">Contact Us</a>
+            <a class="nav-link" href="pages/contact_us.php"">Contact Us</a>
           </li>
         </ul>
 
