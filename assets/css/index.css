@@ -6,6 +6,12 @@
     --color-soft: #FFD700;
     --color-notify: #FB6962;
     --color-background: linear-gradient(333deg, rgba(200, 236, 250, 1) 0%, rgba(188, 232, 237, 1) 21%, rgba(87, 199, 133, 1) 68%, rgba(237, 221, 83, 1) 100%);
+
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
 body{
@@ -13,6 +19,7 @@ body{
     font-family: "Poppins";
     background: #c8ecfa;
     background: linear-gradient(333deg,rgba(200, 236, 250, 1) 0%, rgba(223, 239, 242, 1) 29%);
+    background-repeat: no-repeat;
 }
 
 /* TOPBAR */
@@ -129,6 +136,7 @@ body{
         background-color: var(--color-blizzard);
         gap: 0;
         padding: 20px;
+        z-index: 9999;
     }
 
     .nav-item{
@@ -153,7 +161,51 @@ body{
     }
 }
 
+.form_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.card{
+    padding: 20px;
+    background-color: white-space: inherit;
+    border: none;
+}
+
+
+.card img{
+    width: 80px;
+    margin-right: 20px;
+}
+
+
+.subtitle h1{
+    font-size: 25px;
+}
+
+.subtitle p{
+    font-size: 17px;
+    text-align: center;
+
+}
+hr{
+    padding: 10px;
+}
+
+.btn-signin{
+    background-color: var(--color-base);
+    color: white;
+}
+
+.btn-signin:hover{
+    background-color: var(--color-light-green);
+    color: var(--color-soft)
+}
 .background_subject{
     widht: 100%;
     height: auto;
+    padding: 5px;
+    border-radius: var(--bt-radius);
 }
