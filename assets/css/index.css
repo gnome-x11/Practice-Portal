@@ -9,10 +9,7 @@
 
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-}
+
 
 body{
     padding: 0;
@@ -161,17 +158,22 @@ body{
     }
 }
 
-.form_container{
+/* student portal */
+
+.container form_container{
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 30px;
 }
 
+
 .card{
+    margin-top: 50px;
     padding: 20px;
-    background-color: white-space: inherit;
+    background-color: white-space;
     border: none;
+    display: flex
 }
 
 
@@ -190,6 +192,11 @@ body{
     text-align: center;
 
 }
+
+.error a{
+    text-decoration: none;
+    color: var(--color-base)
+}
 hr{
     padding: 10px;
 }
@@ -201,11 +208,21 @@ hr{
 
 .btn-signin:hover{
     background-color: var(--color-light-green);
-    color: var(--color-soft)
+    color: black;
 }
 .background_subject{
     widht: 100%;
     height: auto;
     padding: 5px;
     border-radius: var(--bt-radius);
+}
+
+/* faculty portal */
+
+body.faculty_portal {
+    background-image: url('../img/bg-img.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
 }

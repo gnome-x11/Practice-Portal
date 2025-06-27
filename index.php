@@ -1,7 +1,7 @@
 <?php
-include_once 'includes/header.php';
-include_once 'includes/topbar.php';
-include_once 'includes/navbar.php'
+include 'includes/header.php';
+include 'includes/topbar.php';
+include 'includes/navbar.php';
 ?>
 
 <!DOCTYPE html>
@@ -12,10 +12,5 @@ include_once 'includes/navbar.php'
 	<title>Tunasan National High School - Main Page</title>
 </head>
 <body>
-    <div class="d-flex justify-content-center align-items-center">
-        <div class="container">
-
-        </div>
-    </div>
 </body>
 </html>
