@@ -14,17 +14,17 @@
 
 <body class="faculty_portal">
     <div class="d-flex justify-content-center align-items-center">
-            <div class="card text-bg-dark ">
+            <div class="card">
                 <div class="d-flex align-items-center">
                 <img class="card_logo" src="../assets/img/small_logo.png">
                 <div class="subtitle">
-                    <h1 class="text-light">
+                    <h1 class="text-dark">
                         <i class="fa-outline fa-lock me-2"></i>
                         THNS Faculty Portal
                     </h1>
                 </div>
             </div>
-            <hr class="text-light">
+            <hr class="text-dark">
                 <div class="container">
                 <form class="form_control" method="" action="">
                     <div class="d-flex align-items-center mb-3">
@@ -48,8 +48,8 @@
                     </div>
                 </form>
                 </div>
-            <hr class="text-light">
-            <div class="error d-flex align-items-center mb-3 text-light">
+            <hr class="text-success">
+            <div class="error d-flex align-items-center mb-3 text-dark">
                 <p class="fw-normal fst-italic fs-14">
                     If you forgot your PIN or need an assistance to <br>
                     activate your account, please email us at <br>

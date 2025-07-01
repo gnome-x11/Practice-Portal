@@ -19,6 +19,9 @@
         </a>
 
         <ul class="nav justify-content-end" id="navbar">
+            <li class="nav-item">
+                <a class="nav-link" href="../index.php">Home</a>
+            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="*" href="#" role="button" aria-expanded="false">School Profile</a>
                 <ul class="dropdown-menu">
@@ -50,7 +53,7 @@
             <a class="nav-link" aria-current="page" href="../pages/carrers.php">Carrers</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../pages/academics.php">Academics</a>
+            <a class="nav-link active" href="../pages/academics.php">Academics</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../pages/contact_us.php">Contact Us</a>

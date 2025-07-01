@@ -13,9 +13,9 @@
 </head>
 <body>
 
-    <div class="d-flex justify-content-center align-items-center">
+    <div class="container-body">
             <div class="card">
-                <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center">
                 <img class="card_logo" src="../assets/img/small_logo.png">
                 <div class="subtitle">
                     <h1 class="text-dark">
@@ -62,5 +62,7 @@
             </div>
         </div>
     </div>
+
+
 </body>
 </html>

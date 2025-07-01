@@ -156,24 +156,25 @@ body{
         display: flex;
         font-size: 20px;
     }
+
 }
 
-/* student portal */
 
-.container form_container{
+
+
+/* portal */
+.container-body{
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding: 30px;
+    align-items: center;
 }
-
 
 .card{
     margin-top: 50px;
     padding: 20px;
-    background-color: white-space;
+    background-color: white;
     border: none;
-    display: flex
+    display: flex;
 }
 
 
@@ -210,12 +211,37 @@ hr{
     background-color: var(--color-light-green);
     color: black;
 }
+
 .background_subject{
-    widht: 100%;
+    width:  100%;
     height: auto;
     padding: 5px;
-    border-radius: var(--bt-radius);
 }
+
+@media (max-width: 768px) {
+    .container-body{
+        padding: 15px;
+    }
+
+    .card {
+        padding: 20px;
+
+    }
+
+    .card img{
+        width: 60px;
+    }
+
+    .subtitle h1{
+        font-size: 20px;
+    }
+
+    .error{
+        font-size: 13px;
+    }
+}
+
+
 
 /* faculty portal */
 
