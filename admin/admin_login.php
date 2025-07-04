@@ -1,5 +1,5 @@
 <?php
-
+require '../conn/conn.php';
 require '../includes/header.php';
 
 ?>
@@ -28,11 +28,12 @@ require '../includes/header.php';
             </div>
             <hr class="text-success">
                 <div class="container">
-                <form class="form_control" method="" action="">
+
+                <form class="form_control" method="POST" action="dashboard.php">
                     <div class="d-flex align-items-center mb-3">
                       <i class="fa-solid fa-user me-2 fs-5 text-secondary"></i>
                       <div class="form-floating flex-grow-1">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="Username">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="Username" name="username">
                         <label for="floatingInput">Username</label>
                       </div>
                     </div>
@@ -40,13 +41,13 @@ require '../includes/header.php';
                     <div class="d-flex align-items-center mb-3">
                         <i class="fa-solid fa-lock me-2 fs-5 text-secondary"></i>
                         <div class="form-floating flex-grow-1">
-                            <input type="password" class="form-control" id="floatingInput" placeholder="Password">
+                            <input type="password" class="form-control" id="floatingInput" placeholder="Password" name="password">
                             <label for="floatingInput">Password</label>
                         </div>
                     </div>
 
                     <div class="d-grid gap-2 mx-auto mt-5">
-                        <button class="btn btn-signin" type="button">Sign In</button>
+                        <button class="btn btn-signin" type="submit">Sign In</button>
                     </div>
                 </form>
                 </div>

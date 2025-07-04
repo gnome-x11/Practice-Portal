@@ -9,8 +9,6 @@
 
     if ($conn -> connect_errno) {
        die ("Connection error . $conn->connect_error");
-    }
-
-    echo "Connected Successfully";
+    };
 
 ?>
