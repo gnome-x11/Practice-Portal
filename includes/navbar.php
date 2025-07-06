@@ -1,6 +1,6 @@
 <?php
-    include 'includes/header.php';
-    include 'includes/topbar.php';
+    include '../includes/header.php';
+    include '../includes/topbar.php';
 ?>
 
 <!DOCTYPE html>
@@ -41,8 +41,8 @@
                   <li><a class="dropdown-item" href="../pages/online_admission_junior.php">Online Addmission (Junior High School)</a></li>
                   <li><a class="dropdown-item" href="../pages/online_admission_senior.php">Online Addmission (Senior High School)</a></li>
                   <li><a class="dropdown-item" href="../pages/online_admission_als.php">Alternative Learning System (ALS)</a></li>
-                  <li><a class="dropdown-item" href="../pages/student_portal.php">Student Portal</a></li>
-                  <li><a class="dropdown-item" href="../pages/faculty_portal.php">Faculty Portal</a></li>
+                  <li><a class="dropdown-item" href="../student_portal/student_portal.php">Student Portal</a></li>
+                  <li><a class="dropdown-item" href="../faculty_portal/faculty_portal.php">Faculty Portal</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="../pages/admission_procedures.php">Admission Requirements and Procedures</a></li>
                   <li><a class="dropdown-item" href="../pages/strand_offered.php">Senior High School Offered Strand</a></li>

@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         if (password_verify($password, $admin["password"])) {
             $issued_At = time();
-            $expire = $issued_At + (60 * 60); // 1 hour
+            $expire = $issued_At + (60 * 60);
 
             $payload = [
                 'iat' => $issued_At,
