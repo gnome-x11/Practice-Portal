@@ -3,9 +3,9 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-    include 'includes/header.php';
-    include 'includes/topbar.php';
-    include 'includes/navbar.php';
+    include './includes/header.php';
+    include './includes/topbar.php';
+    include './includes/navbar.php';
 ?>
 
 <!DOCTYPE html>

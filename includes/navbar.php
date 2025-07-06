@@ -22,6 +22,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="../index.php">Home</a>
             </li>
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="*" href="#" role="button" aria-expanded="false">School Profile</a>
                 <ul class="dropdown-menu">
@@ -33,7 +34,7 @@
                   <li><a class="dropdown-item" href="../pages/student_club.php">Student Clubs</a></li>
                   <li><a class="dropdown-item" href="../pages/organizational_chart">Organizational Structure</a></li>
                 </ul>
-              </li>
+            </li>
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="*" href="#" role="button" aria-expanded="false">Online Services</a>
