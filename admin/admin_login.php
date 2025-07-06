@@ -77,10 +77,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <hr class="text-success">
 
         <div class="container">
-            <?php if (!empty($error)): ?>
-                <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>
-            <?php endif; ?>
-
             <form class="form_control" method="POST" action="">
                 <div class="d-flex align-items-center mb-3">
                     <i class="fa-solid fa-user me-2 fs-5 text-secondary"></i>
@@ -97,10 +93,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <label for="floatingPassword">Password</label>
                     </div>
                 </div>
+                <?php if (!empty($error)): ?>
+                    <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>
+                <?php endif; ?>
 
                 <div class="d-grid gap-2 mx-auto mt-5">
                     <button class="btn btn-signin" type="submit">Sign In</button>
                 </div>
+
             </form>
         </div>
 
