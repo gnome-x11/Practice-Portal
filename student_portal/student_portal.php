@@ -80,7 +80,6 @@ include_once '../includes/navbar.php';
             </div>
             <hr class="text-success">
                 <div class="container">
-
                 <form class="form_control" method="POST" action="">
                     <div class="d-flex align-items-center mb-3">
                       <i class="fa-solid fa-user me-2 fs-5 text-secondary"></i>
@@ -99,8 +98,13 @@ include_once '../includes/navbar.php';
                     </div>
 
                     <?php if (!empty($error)): ?>
-                        <div class="alert alert-danger" id="error_alert"><?=htmlspecialchars($error)?></div>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong><?=htmlspecialchars($error)?></strong> Please Try Again.
+                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
                     <?php endif?>
+
+
 
                     <div class="d-grid gap-2 mx-auto mt-5">
                         <button class="btn btn-signin"  name="submit">Sign In</button>
@@ -121,12 +125,6 @@ include_once '../includes/navbar.php';
         </div>
     </div>
 
-    <script>
-    setTimeout(() => {
-        document.getElementById('error_alert').style.display = 'none';
-    },
-        1000
-    );
-    </script>
+
 </body>
 </html>

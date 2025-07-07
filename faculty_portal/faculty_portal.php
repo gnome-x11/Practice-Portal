@@ -1,4 +1,55 @@
 <?php
+
+    require '../conn/conn.php';
+    require '../vendor/autoload.php';
+    require '../config.php';
+
+    use Firebase\JWT\JWT;
+
+    $secret_key = JWT_SECRET_KEY;
+
+    $error = '';
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $employee_number = trim($_POST['employee_number']);
+        $password = trim($_POST['password']);
+
+        $stmt = $conn->prepare("SELECT * FROM faculty_portal WHERE employee_number = ?");
+        $stmt->bind_param("s", $employee_number);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result && $result->num_rows == 1){
+            $faculty_portal = $result->fetch_assoc();
+
+        if (password_verify($password, $faculty_portal['password'])) {
+            $issued_at = time();
+            $expire = $issued_at + (60 * 60);
+
+            $payload = [
+                'iat'=>$issued_at,
+                'expires'=>$expire,
+                'uid'=>$faculty_portal['fid'],
+                'employee_number'=>$faculty_portal['employee_number']
+            ];
+
+            $jwt = JWT::encode($payload, $secret_key, 'HS256');
+
+            setcookie("faculty_token", $jwt, [
+                'expires'=>$expire,
+                'httponly'=>true,
+                'samesite'=>'Strict',
+                'secure' => isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on'
+            ]);
+
+            header("Location: home.php");
+            exit;
+        }
+    }
+
+    $error = 'Invalid Credentials';
+}
+
     include_once '../includes/header.php';
     include_once '../includes/topbar.php';
     include_once '../includes/navbar.php';
@@ -26,11 +77,11 @@
             </div>
             <hr class="text-dark">
                 <div class="container">
-                <form class="form_control" method="" action="">
+                <form class="form_control" method="POST" action="">
                     <div class="d-flex align-items-center mb-3">
                       <i class="fa-solid fa-user me-2 fs-5 text-secondary"></i>
                       <div class="form-floating flex-grow-1">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="Employee Number">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Employee Number" name="employee_number" required>
                         <label for="floatingInput">Employee Number</label>
                       </div>
                     </div>
@@ -38,13 +89,20 @@
                     <div class="d-flex align-items-center mb-3">
                         <i class="fa-solid fa-lock me-2 fs-5 text-secondary"></i>
                         <div class="form-floating flex-grow-1">
-                            <input type="password" class="form-control" id="floatingInput" placeholder="Pin Number">
+                            <input type="password" class="form-control" id="floatingInput" placeholder="Pin Number" name="password" required>
                             <label for="floatingInput">Pin Number</label>
                         </div>
                     </div>
 
+                    <?php if (!empty($error)): ?>
+                    <div class="alert alert-danger alert-dismissable fade-shadow" role="alert">
+                        <strong><?=htmlspecialchars($error)?></strong> Please Try Again.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <?php endif?>
+
                     <div class="d-grid gap-2  mx-auto mt-5">
-                        <button class="btn btn-signin" type="button">Sign In</button>
+                        <button class="btn btn-signin" name="submit">Sign In</button>
                     </div>
                 </form>
                 </div>

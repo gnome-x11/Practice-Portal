@@ -20,7 +20,7 @@
 
         <ul class="nav justify-content-end" id="navbar">
             <li class="nav-item">
-                <a class="nav-link" href="../index.php">Home</a>
+                <a class="nav-link active" href="../index.php">Home</a>
             </li>
 
             <li class="nav-item dropdown">
@@ -54,19 +54,21 @@
             <a class="nav-link" aria-current="page" href="../pages/carrers.php">Carrers</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="../pages/academics.php">Academics</a>
+            <a class="nav-link" href="../pages/academics.php">Academics</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../pages/contact_us.php">Contact Us</a>
           </li>
         </ul>
 
-    <div class="menu_icon">
-        <i class="fa-solid fa-bars me-2" onclick="toggleMenu()"></i>
-    </div>
+        <div class="menu_icon">
+            <i class="fa-solid fa-bars me-2" onclick="toggleMenu()"></i>
+        </div>
 
       </div>
     </nav>
+
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
