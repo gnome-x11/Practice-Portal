@@ -1,0 +1,3 @@
+RewriteEngine On
+
+ErrorDocument 404 /tunasan_portal/error_404.php
