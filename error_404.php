@@ -12,9 +12,9 @@ echo "<h1></h1>";
 	<title>Page Not Found!</title>
 
 	<link rel="icon" type="image/x-icon" href="assets/img/favicon_io/favicon.ico">
-	<link rel="stylesheet"  href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet"  href="assets/css/fontawesome.min.css">
-	<link rel="stylesheet"  href="assets/css/index.css">
+	<link rel="stylesheet"  href="/tunasan_portal/assets/css/bootstrap.min.css">
+	<link rel="stylesheet"  href="/tunasan_portal/assets/css/fontawesome.min.css">
+	<link rel="stylesheet"  href="/tunasan_portal/assets/css/index.css">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@ echo "<h1></h1>";
            <div class="row justify-content-center">
                <div class="col-7">
                    <div class="card align-items-center">
-                     <img class="error_img" src="assets/img/3747371.jpg" class="card-img-top" alt="..." style="width: 500px;">
+                     <img class="error_img" src="/tunasan_portal/assets/img/3747371.jpg" class="card-img-top" alt="..." style="width: 500px;">
                      <div class="card-body text-center">
                          <h1 class="card-text text-danger">Opps! Page Not Found</h1>
                          <h5 class="fw-light text-warning mt-4">Sorry, the page/file you're trying to access is not found.</h3><br>

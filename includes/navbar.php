@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg p-2">
+    <nav class="navbar navbar-expand-lg p-2" id="myTopnav">
       <div class="container-fluid">
         <a class="navbar-brand" href="../tunasan_portal/index.php">
           <img class="logo" src="/tunasan_portal/assets/img/tunasan_logo.svg" alt="Tunasan Logo">
