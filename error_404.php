@@ -1,7 +1,7 @@
-
 <?php
-include __DIR__ . '/includes/topbar.php';
-include __DIR__ . '/includes/navbar.php';
+
+echo "<h1></h1>";
+
 
 ?>
 <!DOCTYPE html>
@@ -28,8 +28,9 @@ include __DIR__ . '/includes/navbar.php';
                <div class="col-7">
                    <div class="card align-items-center">
                      <img class="error_img" src="assets/img/3747371.jpg" class="card-img-top" alt="..." style="width: 500px;">
-                     <div class="card-body">
-                       <h1 class="card-text text-danger">Opps! Sorry, page not found!</h1><br>
+                     <div class="card-body text-center">
+                         <h1 class="card-text text-danger">Opps! Page Not Found</h1>
+                         <h5 class="fw-light text-warning mt-4">Sorry, the page/file you're trying to access is not found.</h3><br>
                        <p class="text-success text-center">Go back to<span><a class="text-decoration-none text-warning" href="../tunasan_portal/index.php"> Main Page</a></span></p>
                      </div>
                    </div>
