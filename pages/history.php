@@ -12,6 +12,7 @@
 	<title>TNHS - Student Portal</title>
 </head>
 <body>
+    <h1 class="text-danger">history</h1>
 
 </body>
 </html>

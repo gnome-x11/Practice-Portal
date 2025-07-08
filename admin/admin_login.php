@@ -81,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="d-flex align-items-center mb-3">
                     <i class="fa-solid fa-user me-2 fs-5 text-secondary"></i>
                     <div class="form-floating flex-grow-1">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="Username" name="username" required>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="username" required>
                         <label for="floatingInput">Username</label>
                     </div>
                 </div>
@@ -93,12 +93,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <label for="floatingPassword">Password</label>
                     </div>
                 </div>
-                <?php if (!empty($error)): ?>
-                    <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>
-                <?php endif; ?>
 
-                <div class="d-grid gap-2 mx-auto mt-5">
-                    <button class="btn btn-signin" type="submit">Sign In</button>
+                <?php if (!empty($error)): ?>
+                <div class="alert alert-danger alert-dismissable fade-shadow" role="alert">
+                    <strong><?=htmlspecialchars($error)?></strong> Please Try Again.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <?php endif?>
+
+                <div class="d-grid  mx-auto mt-2">
+                    <button class="btn btn-signin btn-lg" type="submit">Sign In</button>
                 </div>
 
             </form>
