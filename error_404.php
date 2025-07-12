@@ -31,7 +31,7 @@ echo "<h1></h1>";
                      <div class="card-body text-center">
                          <h1 class="card-text text-danger">Opps! Page Not Found</h1>
                          <h5 class="fw-light text-warning mt-4">Sorry, the page/file you're trying to access is not found.</h3><br>
-                       <p class="text-success text-center">Go back to<span><a class="text-decoration-none text-warning" href="../tunasan_portal/index.php"> Main Page</a></span></p>
+                       <p class="text-success text-center">Go back to<span><a class="text-decoration-none text-warning" href="/tunasan_portal/index.php"> Main Page</a></span></p>
                      </div>
                    </div>
                </div>

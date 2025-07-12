@@ -19,5 +19,22 @@ $decoded = validateToken("admin_token", "admin_login.php");
 $id = $decoded->uid;
 $username = $decoded->username;
 
-echo "FUCK YOU";
+require '../includes/header.php';
+require '../includes/admin_sidebar.php';
+
+
 ?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TNHS Admin | Home</title>
+
+</head>
+<body>
+
+</body>
+</html>
