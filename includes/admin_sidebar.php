@@ -70,6 +70,29 @@
         </div>
 
       </div>
+
+      <div class="topbar-controls">
+        <div class="dropdown">
+            <div class="user-menu" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="user-avatar">
+                    <?php
+                    $admin_initial = !empty($_SESSION['admin']) ? strtoupper(substr($_SESSION['username'], 0, 1)) : 'A';
+                    echo $admin_initial;
+                    ?>
+                </div>
+                <div class="user-info d-none d-xl-block">
+
+                </div>
+                <i class="bi bi-chevron-down d-none d-xl-block"></i>
+            </div>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="account_management.php"><i class="bi bi-person"></i> Profile</a></li>
+                <li>
+                </li>
+                <li><a class="dropdown-item" href="../includes/logout.php"><i class="bi bi-box-arrow-right"></i>
+                        Logout</a></li>
+            </ul>
+        </div>
     </nav>
 
 
