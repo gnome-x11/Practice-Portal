@@ -21,25 +21,25 @@
 
         <ul class="nav justify-content-end" id="navbar">
             <li class="nav-item">
-                <a class="nav-link active" href="">Home</a>
+                <a class="nav-link active" href="dashboard.php">Home</a>
             </li>
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="*" href="#" role="button" aria-expanded="false">Manage Faculty Account</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="">Junior High School Faculty</a></li>
-                  <li><a class="dropdown-item" href="">Senior High School Faulty</a></li>
+                  <li><a class="dropdown-item" href="junior_high_school_faculty.php">Junior High School Faculty</a></li>
+                  <li><a class="dropdown-item" href="senior_high_school_faculty.php">Senior High School Faulty</a></li>
 
                 </ul>
             </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="*" href="" role="button" aria-expanded="false">Manage Students</a>
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="*" href="admin/" role="button" aria-expanded="false">Manage Students</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="">Online Addmission (Junior High School) Application</a></li>
-                  <li><a class="dropdown-item" href="">Online Addmission (Senior High School) Application</a></li>
-                  <li><a class="dropdown-item" href="">Alternative Learning System (ALS) Application</a></li>
-                  <li><a class="dropdown-item" href="">Student Account Recovery </a></li>
+                  <li><a class="dropdown-item" href="junior_high_admission.php">Online Addmission (Junior High School) Application</a></li>
+                  <li><a class="dropdown-item" href="senior_high_admission.php">Online Addmission (Senior High School) Application</a></li>
+                  <li><a class="dropdown-item" href="als_admission.php">Alternative Learning System (ALS) Application</a></li>
+                  <li><a class="dropdown-item" href="student_account_recovery.php">Student Account Recovery </a></li>
 
                 </ul>
               </li>
@@ -47,10 +47,10 @@
               <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="*" href="" role="button" aria-expanded="false">Manage Content</a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="">Announcement</a></li>
-                    <li><a class="dropdown-item" href="">Job Offers</a></li>
-                    <li><a class="dropdown-item" href="">Student Organization</a></li>
-                    <li><a class="dropdown-item" href="">Student Clubs</a></li>
+                    <li><a class="dropdown-item" href="announcement.php">Announcement</a></li>
+                    <li><a class="dropdown-item" href="job_offer.php">Job Offers</a></li>
+                    <li><a class="dropdown-item" href="student_organization.php">Student Organization</a></li>
+                    <li><a class="dropdown-item" href="student_club.php">Student Clubs</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="">Admission Requirements and Procedures</a></li>
                     <li><a class="dropdown-item" href="">Senior High School Offered Strand</a></li>
@@ -58,12 +58,10 @@
                 </li>
 
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/">Job Offers</a>
+            <a class="nav-link" aria-current="page" href="job_applications.php">Job Applications</a>
           </li>
           <li class="nav-item">
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Inquires</a>
+            <a class="nav-link" href="inquiries.php">Inquires</a>
           </li>
         </ul>
 
