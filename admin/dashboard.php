@@ -38,11 +38,7 @@ require '../includes/admin_sidebar.php';
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>TNHS Admin | Home</title>
 </head>
-<style>
 
-
-
-</style>
 <body>
     <div class="mamao">
         <div class="row">
