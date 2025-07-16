@@ -1,3 +1,6 @@
 # Ignore environment and config files
 conn
 config.php
+mykey.pem
+mykey.pub
+.env

@@ -87,7 +87,7 @@
                 <li><a class="dropdown-item" href="account_management.php"><i class="bi bi-person"></i> Profile</a></li>
                 <li>
                 </li>
-                <li><a class="dropdown-item" href="../includes/logout.php"><i class="bi bi-box-arrow-right"></i>
+                <li><a class="dropdown-item" href="/tunasan_portal/admin/logout.php"><i class="bi bi-box-arrow-right"></i>
                         Logout</a></li>
             </ul>
         </div>

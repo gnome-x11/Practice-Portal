@@ -66,3 +66,19 @@ require '../includes/admin_sidebar.php';
 
 </body>
 </html>
+
+<!--
+TO BE ADDED IN THE MODAL
+
+PHOTO:
+FIRST NAME:
+MIDDLE NAME:
+LAST NAME:
+
+ADDRESS:(use a js for address)
+
+DEPARTMENT:
+YEAR LEVEL:
+
+
+-->

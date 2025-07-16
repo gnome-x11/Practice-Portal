@@ -10,7 +10,6 @@ require_once '../includes/header.php';
 use Firebase\JWT\JWT;
 
 $secret_key = JWT_SECRET_KEY;
-
 $error = '';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
