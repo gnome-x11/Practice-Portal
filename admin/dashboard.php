@@ -8,7 +8,7 @@ require_once '../conn/conn.php';
 require_once "../vendor/autoload.php";
 require_once "../config.php";
 
-require_once '../includes/header.php';
+require '../includes/header.php';
 require_once '../jwt_validator.php';
 
 use Firebase\JWT\JWT;
@@ -24,10 +24,10 @@ require '../includes/admin_sidebar.php';
 ?>
 
 <?php
-    $junior_faculty = $conn->query("SELECT COUNT(*) as total FROM faculty_portal WHERE position = 'junior_high'")->fetch_assoc()["total"];
-    $senior_faculty = $conn->query("SELECT COUNT(*) as total FROM faculty_portal WHERE position = 'senior_high'")->fetch_assoc()["total"];
-    $junior_students = $conn->query("SELECT COUNT(*) as total FROM student_portal WHERE level = 'junior_high'")->fetch_assoc()["total"];
-    $senior_students = $conn->query("SELECT COUNT(*) as total FROM student_portal WHERE level = 'senior_high'")->fetch_assoc()["total"];
+    $junior_faculty = $pdo->query("SELECT COUNT(*) as total FROM faculty_portal WHERE position = 'junior_high'")->fetch(PDO::FETCH_ASSOC)['total'];
+    $senior_faculty = $pdo->query("SELECT COUNT(*) as total FROM faculty_portal WHERE position = 'senior_high'")->fetch(PDO::FETCH_ASSOC)['total'];
+    $junior_students = $pdo->query("SELECT COUNT(*) as total FROM student_portal WHERE level = 'junior_high'")->fetch(PDO::FETCH_ASSOC)['total'];
+    $senior_students = $pdo->query("SELECT COUNT(*) as total FROM student_portal WHERE level = 'senior_high'")->fetch(PDO::FETCH_ASSOC)['total'];
 
 ?>
 

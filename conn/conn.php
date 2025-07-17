@@ -3,12 +3,16 @@
     $servername = "localhost";
     $username = "root";
     $password = '';
-    $db_name = "32074_tunasan";
 
-    $conn = new mysqli($servername, $username, $password, $db_name);
+    try {
+        $pdo = new PDO("mysql:host=$servername; dbname=32074_tunasan", $username, $password);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        // echo "Connected Successfully";
+    } catch(PDOException $e) {
+        echo "Connection failed " . $e->getMessage();
+    }
 
-    if ($conn -> connect_errno) {
-       die ("Connection error . $conn->connect_error");
-    };
+
+
 
 ?>

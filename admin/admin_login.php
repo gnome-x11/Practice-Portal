@@ -9,22 +9,19 @@ require_once '../includes/header.php';
 
 use Firebase\JWT\JWT;
 
-$secret_key = JWT_SECRET_KEY;
+$privateKey = file_get_contents((dirname(__DIR__) . '/keys/private_key.pem'));
+
 $error = '';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = trim($_POST["username"]);
     $password = trim($_POST["password"]);
 
-    $stmt = $conn->prepare("SELECT * FROM admin WHERE username = ?");
-    $stmt->bind_param("s", $username);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    $stmt = $pdo->prepare("SELECT * FROM admin WHERE username = :username");
+    $stmt->execute(['username' => $username]);
+    $admin = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($result && $result->num_rows == 1) {
-        $admin = $result->fetch_assoc();
-
-        if (password_verify($password, $admin["password"])) {
+        if ($admin && password_verify($password, $admin["password"])) {
             $issued_At = time();
             $expire = $issued_At + (60 * 60);
 
@@ -35,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 'username' => $admin['username']
             ];
 
-            $jwt = JWT::encode($payload, $secret_key, 'HS256');
+            $jwt = JWT::encode($payload, $privateKey, 'RS256');
 
             setcookie("admin_token", $jwt, [
                 'expires' => $expire,
@@ -47,10 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             header("Location: dashboard.php");
             exit;
         }
-    }
-
     $error = "Invalid credentials";
-}
+    }
 ?>
 
 <!DOCTYPE html>

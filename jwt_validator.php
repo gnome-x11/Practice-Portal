@@ -1,5 +1,8 @@
 <?php
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 require_once "../conn/conn.php";
 require_once "../vendor/autoload.php";
 require_once "../config.php";
@@ -8,7 +11,9 @@ use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
 function validateToken ( $cookieName, $redirectURL = "login.php") {
-    $secret_key = JWT_SECRET_KEY;
+    // $secret_key = JWT_SECRET_KEY;
+
+    $publicKey = file_get_contents(__DIR__ . '/keys/public_key.pub');
 
     if (!isset($_COOKIE[$cookieName])) {
         header("Location: $redirectURL");
@@ -16,7 +21,7 @@ function validateToken ( $cookieName, $redirectURL = "login.php") {
     }
 
     try{
-        $decoded = JWT::decode($_COOKIE[$cookieName], new Key($secret_key, 'HS256'));
+        $decoded = JWT::decode($_COOKIE[$cookieName], new Key($publicKey, 'RS256'));
         return $decoded;
     } catch (Exception $e) {
         header("Location: $redirectURL");
