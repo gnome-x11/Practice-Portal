@@ -6,7 +6,7 @@
 
     use Firebase\JWT\JWT;
 
-    $secret_key = JWT_SECRET_KEY;
+    $privateKey = file_get_contents((dirname(__DIR__) . '/keys/private_key.pem'));
 
     $error = '';
 
@@ -14,15 +14,11 @@
         $employee_number = trim($_POST['employee_number']);
         $password = trim($_POST['password']);
 
-        $stmt = $conn->prepare("SELECT * FROM faculty_portal WHERE employee_number = ?");
-        $stmt->bind_param("s", $employee_number);
-        $stmt->execute();
-        $result = $stmt->get_result();
+        $stmt = $pdo->prepare("SELECT * FROM faculty_portal WHERE employee_number = :employee_number");
+        $stmt->execute(['employee_number' => $employee_number]);
+        $faculty_portal = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($result && $result->num_rows == 1){
-            $faculty_portal = $result->fetch_assoc();
-
-        if (password_verify($password, $faculty_portal['password'])) {
+        if ($faculty_portal && password_verify($password, $faculty_portal['password'])) {
             $issued_at = time();
             $expire = $issued_at + (60 * 60);
 
@@ -33,7 +29,7 @@
                 'employee_number'=>$faculty_portal['employee_number']
             ];
 
-            $jwt = JWT::encode($payload, $secret_key, 'HS256');
+            $jwt = JWT::encode($payload, $privateKey, 'RS256');
 
             setcookie("faculty_token", $jwt, [
                 'expires'=>$expire,
@@ -45,8 +41,6 @@
             header("Location: home.php");
             exit;
         }
-    }
-
     $error = 'Invalid Credentials';
 }
 

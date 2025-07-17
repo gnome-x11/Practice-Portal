@@ -9,7 +9,7 @@ require_once '../config.php';
 
 use Firebase\JWT\JWT;
 
-$secret_key = JWT_SECRET_KEY;
+$privateKey = file_get_contents((dirname(__DIR__) . '/keys/private_key.pem'));
 
 $error = '';
 
@@ -17,15 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $lrn_number = trim($_POST['lrn_number']);
     $password = trim($_POST['password']);
 
-    $stmt = $conn->prepare("SELECT * FROM student_portal WHERE lrn_number = ?");
-    $stmt->bind_param("s", $lrn_number);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    $stmt = $pdo->prepare("SELECT * FROM student_portal WHERE lrn_number = :lrn_number");
+    $stmt->execute(['lrn_number' => $lrn_number]);
+    $lrn_number = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($result && $result->num_rows == 1){
-        $student_portal = $result->fetch_assoc();
-
-        if (password_verify($password, $student_portal['password'])) {
+        if ($lrn_number && password_verify($password, $lrn_number['password'])) {
             $issuedAt = time();
             $expire = $issuedAt + (60 * 60);
 
@@ -36,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'lrn_number' => $student_portal['lrn_number']
             ];
 
-            $jwt = JWT::encode($payload, $secret_key, 'HS256');
+            $jwt = JWT::encode($payload, $privateKey, 'RS256');
 
             setcookie("student_token", $jwt, [
                 'expires'=> $expire,
@@ -48,12 +44,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header("Location: home.php");
             exit;
         }
-    }
     $error = "Invalid Credentials";
-}
+    }
 
 include_once '../includes/header.php';
-include_once '../includes/topbar.php';
 include_once '../includes/navbar.php';
 ?>
 

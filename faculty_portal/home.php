@@ -10,15 +10,12 @@ require_once '../jwt_validator.php';
 
 use Firebase\JWT\JWT;
 
-$secret_key = JWT_SECRET_KEY;
-
 session_start();
 
-$decoded = validateToken("faculty_token", $secret_key);
+$decoded = validateToken("faculty_token", "faculty_portal.php");
 $id = $decoded->uid;
 $employee_number = $decoded->employee_number;
 
 include_once '../includes/header.php';
-include_once '../includes/topbar.php';
 include_once '../includes/navbar.php';
 ?>
