@@ -11,7 +11,6 @@ use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
 function validateToken ( $cookieName, $redirectURL = "login.php") {
-    // $secret_key = JWT_SECRET_KEY;
 
     $publicKey = file_get_contents(__DIR__ . '/keys/public_key.pub');
 

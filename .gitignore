@@ -4,3 +4,5 @@ config.php
 mykey.pem
 mykey.pub
 .env
+keys
+.htaccess

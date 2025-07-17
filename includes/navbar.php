@@ -1,6 +1,6 @@
 <?php
     include __DIR__ . '/header.php';
-    include __DIR__ . '/topbar.php';
+
 
 ?>
 
@@ -15,13 +15,13 @@
 
     <nav class="navbar navbar-expand-lg p-2" id="myTopnav">
       <div class="container-fluid">
-        <a class="navbar-brand" href="../tunasan_portal/index.php">
+        <a class="navbar-brand" href="/tunasan_portal/index.php">
           <img class="logo" src="/tunasan_portal/assets/img/tunasan_logo.svg" alt="Tunasan Logo">
         </a>
 
         <ul class="nav justify-content-end" id="navbar">
             <li class="nav-item">
-                <a class="nav-link active" href="../index.php">Home</a>
+                <a class="nav-link active" href="/tunasan_portal/index.php">Home</a>
             </li>
 
             <li class="nav-item dropdown">
@@ -70,8 +70,10 @@
 
 
 
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/index.js"></script>
+    <script src="/tunasan_portal/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/tunasan_portal/assets/js/index.js"></script>
+
+
 
 </body>
 </html>

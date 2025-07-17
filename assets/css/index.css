@@ -63,7 +63,6 @@ body{
 /* NAVBAR */
 
 .navbar{
-    margin-top: 25;
     background: #c8ecfa;
     background: linear-gradient(333deg, rgba(200, 236, 250, 1) 0%, rgba(188, 232, 237, 1) 21%, rgba(87, 199, 133, 1) 68%, rgba(237, 221, 83, 1) 100%);
 }
@@ -111,18 +110,14 @@ body{
     display: none;
 }
 
-@media (max-width: 760px) {
-    .navbar{
-        margin-top: 50px;
+@media (max-width: 768px) {
 
-    }
     .navbar-brand .logo{
         height: 50px;
     }
 
     .nav{
         position: absolute;
-        top: 70px;
         right: 0;
         left: 0;
         flex-direction: column;
@@ -131,18 +126,33 @@ body{
         gap: 0;
         padding: 20px;
         z-index: 9999;
+        display: none;
+        justify-content: center;
+        align-self: center;
+    }
+
+    .nav.show {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        top: 20vh;
+        z-index: 999;
+    }
+    .nav.show::after{
+        background: #333;
     }
 
     .nav-item{
-        padding: 20px;
+        padding: 10px;
+
     }
 
     .dropdown-menu{
-        width: 100%;
         gap: 0;
         border: none;
-        padding: 20px;
         text-align: center;
+
     }
 
     .dropdown-menu li {
@@ -152,11 +162,10 @@ body{
     .menu_icon{
         display: flex;
         font-size: 20px;
+        cursor: pointer;
     }
 
 }
-
-
 
 
 /* portal */
