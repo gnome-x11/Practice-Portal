@@ -1,8 +1,8 @@
 
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 
 require_once '../conn/conn.php';
 require_once "../vendor/autoload.php";
@@ -15,7 +15,6 @@ require_once '../jwt_validator.php';
 $decoded = validateToken("admin_token", 'admin_login.php');
 $id = $decoded->uid;
 $username = $decoded->username;
-
 
 require '../includes/header.php';
 require '../includes/admin_sidebar.php';

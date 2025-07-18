@@ -9,8 +9,6 @@ require_once '../includes/header.php';
 
 use Firebase\JWT\JWT;
 
-$privateKey = file_get_contents((dirname(__DIR__) . '/keys/private_key.pem'));
-
 $error = '';
 ?>
 
@@ -55,12 +53,11 @@ $error = '';
                     </div>
                 </div>
 
-                <?php if (!empty($error)): ?>
-                <div class="alert alert-danger alert-dismissable fade-shadow" role="alert">
-                    <strong><?=htmlspecialchars($error)?></strong> Please Try Again.
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <div id="errorBox" class="alert alert-danger alert-dismissible fade show d-none" role="alert">
+                  <strong id="errorText"></strong> Please try again.
+                  <button type="button" class="btn-close" onclick="document.getElementById('errorBox').classList.add('d-none')" aria-label="Close"></button>
                 </div>
-                <?php endif?>
+
 
                 <div class="d-grid  mx-auto mt-2">
                     <button class="btn btn-signin btn-lg" type="submit">Sign In</button>
@@ -91,11 +88,12 @@ $error = '';
     const username = document.querySelector("input[name='username']").value.trim();
     const password = document.querySelector("input[name='password']").value.trim();
 
-    fetch("../api/login_api.php", {
+    fetch("../api/admin_login_api.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
+        credentials: 'include',
         body: JSON.stringify({username, password})
     })
 
@@ -104,7 +102,15 @@ $error = '';
         if (data.success) {
             window.location.href = 'dashboard.php';
         } else {
-            alert(data.error);
+            const errorBox = document.getElementById("errorBox");
+            const errorText = document.getElementById("errorText");
+
+            errorText.textContent = data.error;
+            errorBox.classList.remove("d-none");
+
+            setTimeout(() => {
+                errorBox.classList.add("d-none");
+            }, 4000);
         }
     })
 
