@@ -12,40 +12,6 @@ use Firebase\JWT\JWT;
 $privateKey = file_get_contents((dirname(__DIR__) . '/keys/private_key.pem'));
 
 $error = '';
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $username = trim($_POST["username"]);
-    $password = trim($_POST["password"]);
-
-    $stmt = $pdo->prepare("SELECT * FROM admin WHERE username = :username");
-    $stmt->execute(['username' => $username]);
-    $admin = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if ($admin && password_verify($password, $admin["password"])) {
-            $issued_At = time();
-            $expire = $issued_At + (60 * 60);
-
-            $payload = [
-                'iat' => $issued_At,
-                'exp' => $expire,
-                'uid' => $admin['id'],
-                'username' => $admin['username']
-            ];
-
-            $jwt = JWT::encode($payload, $privateKey, 'RS256');
-
-            setcookie("admin_token", $jwt, [
-                'expires' => $expire,
-                'httponly' => true,
-                'samesite' => 'Strict',
-                'secure' => isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' // Avoid issues in localhost
-            ]);
-
-            header("Location: dashboard.php");
-            exit;
-        }
-    $error = "Invalid credentials";
-    }
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <hr class="text-success">
 
         <div class="container">
-            <form class="form_control" method="POST" action="">
+            <form class="form_control" id="loginForm">
                 <div class="d-flex align-items-center mb-3">
                     <i class="fa-solid fa-user me-2 fs-5 text-secondary"></i>
                     <div class="form-floating flex-grow-1">
@@ -117,6 +83,38 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+    const username = document.querySelector("input[name='username']").value.trim();
+    const password = document.querySelector("input[name='password']").value.trim();
+
+    fetch("../api/login_api.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({username, password})
+    })
+
+    .then(res=>res.json())
+    .then(data => {
+        if (data.success) {
+            window.location.href = 'dashboard.php';
+        } else {
+            alert(data.error);
+        }
+    })
+
+    .catch(err => {
+        console.error("Login error:", err);
+        alert("Something went wrong");
+    });
+
+});
+</script>
 
 </body>
 </html>

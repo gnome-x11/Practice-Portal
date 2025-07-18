@@ -9,15 +9,13 @@ require_once "../vendor/autoload.php";
 require_once "../config.php";
 
 require '../includes/header.php';
+require_once '../auth_middleware.php';
 require_once '../jwt_validator.php';
 
-use Firebase\JWT\JWT;
-
-session_start();
-
-$decoded = validateToken("admin_token", "admin_login.php");
+$decoded = validateToken("admin_token", 'admin_login.php');
 $id = $decoded->uid;
 $username = $decoded->username;
+
 
 require '../includes/header.php';
 require '../includes/admin_sidebar.php';
