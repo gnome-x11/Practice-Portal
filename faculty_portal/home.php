@@ -14,7 +14,7 @@ session_start();
 
 $decoded = validateToken("faculty_token", "faculty_portal.php");
 $id = $decoded->uid;
-$employee_number = $decoded->employee_number;
+$employee_no = $decoded->employee_no;
 
 include_once '../includes/header.php';
 include_once '../includes/navbar.php';

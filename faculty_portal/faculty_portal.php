@@ -11,11 +11,11 @@
     $error = '';
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $employee_number = trim($_POST['employee_number']);
+        $employee_no = trim($_POST['employee_no']);
         $password = trim($_POST['password']);
 
-        $stmt = $pdo->prepare("SELECT * FROM faculty_portal WHERE employee_number = :employee_number");
-        $stmt->execute(['employee_number' => $employee_number]);
+        $stmt = $conn->prepare("SELECT * FROM faculty WHERE employee_no = :employee_no");
+        $stmt->execute(['employee_no' => $employee_no]);
         $faculty_portal = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($faculty_portal && password_verify($password, $faculty_portal['password'])) {
@@ -26,7 +26,7 @@
                 'iat'=>$issued_at,
                 'expires'=>$expire,
                 'uid'=>$faculty_portal['fid'],
-                'employee_number'=>$faculty_portal['employee_number']
+                'employee_no'=>$faculty_portal['employee_no']
             ];
 
             $jwt = JWT::encode($payload, $privateKey, 'RS256');
@@ -75,7 +75,7 @@
                     <div class="d-flex align-items-center mb-3">
                       <i class="fa-solid fa-user me-2 fs-5 text-secondary"></i>
                       <div class="form-floating flex-grow-1">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Employee Number" name="employee_number" required>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Employee Number" name="employee_no" required>
                         <label for="floatingInput">Employee Number</label>
                       </div>
                     </div>

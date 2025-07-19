@@ -21,10 +21,10 @@ require '../includes/admin_sidebar.php';
 ?>
 
 <?php
-    $junior_faculty = $pdo->query("SELECT COUNT(*) as total FROM faculty_portal WHERE position = 'junior_high'")->fetch(PDO::FETCH_ASSOC)['total'];
-    $senior_faculty = $pdo->query("SELECT COUNT(*) as total FROM faculty_portal WHERE position = 'senior_high'")->fetch(PDO::FETCH_ASSOC)['total'];
-    $junior_students = $pdo->query("SELECT COUNT(*) as total FROM student_portal WHERE level = 'junior_high'")->fetch(PDO::FETCH_ASSOC)['total'];
-    $senior_students = $pdo->query("SELECT COUNT(*) as total FROM student_portal WHERE level = 'senior_high'")->fetch(PDO::FETCH_ASSOC)['total'];
+    $junior_faculty = $conn->query("SELECT COUNT(*) as total FROM faculty WHERE level = 'Junior High School'")->fetch(PDO::FETCH_ASSOC)['total'];
+    $senior_faculty = $conn->query("SELECT COUNT(*) as total FROM faculty WHERE level = 'senior_high'")->fetch(PDO::FETCH_ASSOC)['total'];
+    $junior_students = $conn->query("SELECT COUNT(*) as total FROM student_portal WHERE level = 'junior_high'")->fetch(PDO::FETCH_ASSOC)['total'];
+    $senior_students = $conn->query("SELECT COUNT(*) as total FROM student_portal WHERE level = 'senior_high'")->fetch(PDO::FETCH_ASSOC)['total'];
 
 ?>
 
